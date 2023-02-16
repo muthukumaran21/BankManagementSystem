@@ -27,8 +27,17 @@ public class Encryptor implements  Encryptable{
 
        for(int i = 0 ; i < text.length(); i++)
        {
-           char temp =  (char)(((text.charAt(i) - 'A' + offset ) % 26) + 'A');
-           encryptedString.append(  temp);
+           if(Character.isAlphabetic(text.charAt(i)))
+           {
+               char temp =  (char)(((text.charAt(i) - 'A' + offset ) % 26) + 'A');
+               encryptedString.append(  temp);
+           }
+           else
+           {
+               encryptedString.append(text.charAt(i));
+           }
+
+
        }
 
 
@@ -45,8 +54,16 @@ public class Encryptor implements  Encryptable{
 
         for(int i = 0 ; i < text.length(); i++)
         {
-            char temp =  (char)(((text.charAt(i) - 'A' + (26 - offset) ) % 26) + 'A');
-            decryptedString.append(  temp);
+            if(Character.isAlphabetic(text.charAt(i)))
+            {
+                char temp = (char) (((text.charAt(i) - 'A' + (26 - offset)) % 26) + 'A');
+                decryptedString.append(temp);
+            }
+            else
+            {
+                decryptedString.append(text.charAt(i));
+
+            }
         }
 
 
