@@ -4,7 +4,7 @@ public class EncryptionTester {
 
 
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         testSet1();
         System.out.println();
@@ -47,6 +47,7 @@ public class EncryptionTester {
 
     public static void testSet1()
     {
+
 
 //        Encryptor encryptor1 = new Encryptor();
 //        encryptor1.setOffset(0);

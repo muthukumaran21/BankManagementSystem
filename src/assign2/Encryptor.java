@@ -4,7 +4,7 @@ public class Encryptor implements  Encryptable{
 
     private int offset;
 
-   public void Encryptor()
+   public  Encryptor()
     {
         this.offset = 1;
     }
