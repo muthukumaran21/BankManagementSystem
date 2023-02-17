@@ -1,9 +1,15 @@
 package assign2;
 
+
+/**
+ * EncryptionTester class is used to tests the encryption and decryption of different strings with different offsets
+ */
 public class EncryptionTester {
 
 
-
+    /**
+     * The main method that runs the two test sets
+     */
     public static void main(String[] args)
     {
         testSet1();
@@ -11,6 +17,10 @@ public class EncryptionTester {
         testSet2();
     }
 
+    /**
+     * This is used to print the various values
+     * @param encryptor
+     */
     public static void print(Encryptor encryptor)
     {
 
@@ -41,13 +51,17 @@ public class EncryptionTester {
 
         System.out.println("String :  COEN 275 OO Analysis, Design and Programming");
         System.out.println(" Enrypted string :  "+encryptor.encrypt("COEN 275 OO Analysis, Design and Programming"));
-        System.out.println(" decrypted string  : "+ encryptor.decrypt(encryptor.encrypt("COEN 275 OO Analysis, Design and Programming")));
+        System.out.println(" decrypted string  : "+
+                encryptor.decrypt(encryptor.encrypt("COEN 275 OO Analysis, Design and Programming")));
         System.out.println();
     }
 
+
+    /**
+     * A method that tests the Encryptor class with different offsets
+     */
     public static void testSet1()
     {
-
 
 //        Encryptor encryptor1 = new Encryptor();
 //        encryptor1.setOffset(0);
@@ -72,6 +86,9 @@ public class EncryptionTester {
 
     }
 
+    /**
+     * A method that tests the Encryptor class with a random offset between 1 and 25 (inclusive)
+     */
     public static void  testSet2()
     {
 

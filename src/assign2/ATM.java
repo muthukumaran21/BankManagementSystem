@@ -3,11 +3,19 @@ package assign2;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * This class represents an ATM which can perform operations like adding bank accounts,withdrawing money and checking account information.
+ * It contains a list of BankAccount objects and an Encryptor object to encrypt/decrypt the password for each account.
+ */
 public class ATM {
 
    private List<BankAccount> account ;
    private Encryptor passwordEncoder;
 
+    /**
+     * Constructor that initializes the account list and password encoder.
+     */
    public  ATM()
    {
        account = new ArrayList<>();
@@ -15,6 +23,14 @@ public class ATM {
 
    }
 
+    /**
+     * Adds a new BankAccount to the account list if the account id is unique.
+     *
+     * @param acctId The account id to be added
+     * @param name The name of the account holder
+     * @param balance The initial balance of the account
+     * @param password The password for the account
+     */
    public void addAccount(String acctId, String name,double balance, String password)
    {
       String encryptedPassword =  passwordEncoder.encrypt(password);
@@ -41,7 +57,14 @@ public class ATM {
 
 
    }
-
+    /**
+     * Withdraws money from the account with the given account id if the password matches.
+     *
+     * @param acctId The account id of the account from which money is to be withdrawn
+     * @param password The password for the account
+     * @param amount The amount of money to be withdrawn
+     * @return The amount of money withdrawn from the account
+     */
    public double getMoney(String acctId, String password, double amount)
    {
        if(checkAccount(acctId))
@@ -71,6 +94,12 @@ public class ATM {
 
    }
 
+    /**
+     * Checks if the given account id exists in the account list.
+     *
+     * @param acctId The account id to be checked
+     * @return true if the account id exists in the account list, false otherwise
+     */
    public boolean checkAccount(String acctId)
    {
 
@@ -86,6 +115,12 @@ public class ATM {
        return false;
    }
 
+    /**
+     * Gets the BankAccount object with the given account id.
+     *
+     * @param acctId The account id of the BankAccount object to be returned
+     * @return The BankAccount object with the given account id
+     */
     public BankAccount getAccount(String acctId)
     {
 
@@ -100,6 +135,11 @@ public class ATM {
 
     }
 
+    /**
+    * Gets the BankAccount object with the given account id.
+    * Used to get the ATM method
+    */
+
     public static void main( String[] args)
     {
         ATM atm = new ATM();
@@ -112,7 +152,6 @@ public class ATM {
         atm.getMoney("B654","renaissance",50.00);
         atm.getMoney("B654","renaissance",50.00);
         atm.addAccount("A123","M.Jones",1000.00,"fall-quarter");
-
 
     }
 
